@@ -93,7 +93,7 @@ function PostDetail() {
               <Title style={{ color: 'white' }}>{post.title}</Title>
               <div className="article-meta">
                 <a>
-                  <img
+                  <img alt=""
                     src={
                       user?.result.image
                         ? 'https://joeschmoe.io/api/v1/random'

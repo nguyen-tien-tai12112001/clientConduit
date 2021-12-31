@@ -86,7 +86,7 @@ const CommentSection: FC<any> = ({ post }) => {
           }}
         ></textarea>
         <div className="footer">
-          <img
+          <img alt=""
             src={
               user?.result.image
                 ? 'https://joeschmoe.io/api/v1/random'

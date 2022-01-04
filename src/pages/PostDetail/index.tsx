@@ -9,26 +9,26 @@ import { deletePost, getPost } from '../../actions/posts';
 import CommentSection from './CommentSection';
 const { Title } = Typography;
 
-const Banner = styled(Col) `
-background: #333;
-    padding: 1rem;
-    margin-bottom: 2rem;
-    .content{
+const Banner = styled(Col)`
+  background: #333;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  .content {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-    align-content: flex-start;  
-}
-.info{
+    align-content: flex-start;
+  }
+  .info {
     color: #fff;
     font-size: 1.2rem;
     display: block;
     font-weight: bold;
     margin-bottom: 0.4rem;
-}
-.footer img {
+  }
+  .footer img {
     display: inline-block;
     vertical-align: middle;
     height: 32px;
@@ -37,16 +37,17 @@ background: #333;
     position: absolute;
     left: 8px;
     bottom: 10px;
-}
-
-`
+  }
+`;
 function PostDetail() {
   var storage: any = localStorage.getItem('profile');
-  const { post} = useSelector((state: any) => state.posts);
+  const { post } = useSelector((state: any) => state.posts);
   const [user, setUser] = useState<any>(JSON.parse(storage));
   const [visible, setVisible] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
-  const [modalText, setModalText] = useState('Do you want to delete this post?');
+  const [modalText, setModalText] = useState(
+    'Do you want to delete this post?'
+  );
   const isUser = user?.result?._id === post?.creator;
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -58,9 +59,7 @@ function PostDetail() {
 
   useEffect(() => {
     dispatch(getPost(id));
-    
-  }, [id,dispatch]);
- 
+  }, [id, dispatch]);
 
   const showModal = () => {
     setVisible(true);
@@ -93,7 +92,8 @@ function PostDetail() {
               <Title style={{ color: 'white' }}>{post.title}</Title>
               <div className="article-meta">
                 <a>
-                  <img alt=""
+                  <img
+                    alt=""
                     src={
                       user?.result.image
                         ? user?.result.image
@@ -112,18 +112,9 @@ function PostDetail() {
                 </div>
                 {isUser ? (
                   <div style={{ marginLeft: '2rem' }}>
-                    {/* <Button ghost onClick = {handleUpdatePost}>
-                      <i
-                        style={{ marginRight: '2px', opacity: '0.5' }}
-                        className="fas fa-pencil-alt"
-                      ></i>{' '}
-                      Edit Article
-                    </Button> */}
                     <Button
                       style={{ marginLeft: '5px' }}
-                      onClick={
-                      showModal
-                    }
+                      onClick={showModal}
                       type="primary"
                       danger
                       ghost
@@ -146,7 +137,11 @@ function PostDetail() {
         <Row justify="center">
           <Col xs={23} md={18} xl={19} className="border">
             <Title
-              style={{ textAlign: 'start', paddingBottom: '3rem',marginLeft:"-15px" }}
+              style={{
+                textAlign: 'start',
+                paddingBottom: '3rem',
+                marginLeft: '-15px',
+              }}
               level={4}
             >
               {post.article}
@@ -161,7 +156,7 @@ function PostDetail() {
           </Col>
         </Row>
       </Col>
-      
+
       <Modal
         title="Title"
         visible={visible}

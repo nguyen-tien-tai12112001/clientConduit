@@ -65,8 +65,6 @@ export const updatePost = (id: any, post: any) => async (dispatch: any) => {
 };
 
 export const likePost = (id: any) => async (dispatch: any) => {
-  //   const user = JSON.parse(localStorage.getItem('profile') as string);
-
   try {
     const { data } = await api.likePost(id);
 

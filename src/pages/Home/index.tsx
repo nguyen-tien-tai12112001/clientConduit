@@ -8,11 +8,7 @@ const Home = () => {
   useEffect(() => {
     dispatch(getPosts(1));
   }, [dispatch]);
-  return (
-    
-      <Posts />
-    
-  );
+  return <Posts />;
 };
 
 export default Home;

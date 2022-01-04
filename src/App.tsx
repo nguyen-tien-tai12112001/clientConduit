@@ -4,13 +4,12 @@ import { Footer, Header } from './components';
 import Router from './routers';
 
 function App() {
-  
   return (
     <div>
-    <Header/>
-    <Router/>
-    <Footer/>
-  </div>
+      <Header />
+      <Router />
+      <Footer />
+    </div>
   );
 }
 

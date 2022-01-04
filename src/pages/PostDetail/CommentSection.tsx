@@ -1,6 +1,6 @@
 import { Avatar, Button, Comment, Tooltip, Typography } from 'antd';
 import moment from 'moment';
-import  { FC, useState } from 'react';
+import { FC, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { commentPost } from '../../actions/posts';
@@ -38,9 +38,7 @@ const CommentSection: FC<any> = ({ post }) => {
   const [comment, setComment] = useState('');
   const [error, setError] = useState('');
   const [comments, setComments] = useState<any>(post?.comments);
-
   const dispatch = useDispatch();
-
   const handleComment = async () => {
     if (comment.trim().length > 0) {
       const newComments = await dispatch(
@@ -86,7 +84,8 @@ const CommentSection: FC<any> = ({ post }) => {
           }}
         ></textarea>
         <div className="footer">
-          <img alt=""
+          <img
+            alt=""
             src={
               user?.result.image
                 ? user?.result.image

@@ -30,8 +30,6 @@ const signup = (formData: any, router: any) => async (dispatch: any) => {
 
     router('/');
   } catch (error: any) {
-    // console.log(error.response.data.message);
-
     const er = error.response.data.message;
     console.log(er);
 
@@ -47,12 +45,8 @@ const updateProfile =
 
       router('/profile');
     } catch (error: any) {
-      // console.log(error.response.data.message);
-
       const er = error.response.data.message;
       console.log(er);
-
-      // dispatch({ type: SIGNUP_FAIL, er });
     }
   };
 

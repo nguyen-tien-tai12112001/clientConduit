@@ -1,15 +1,7 @@
 import { Avatar } from 'antd';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import {
-  Container,
-  LinkBrand,
-  Nav,
-  NavBar,
-  NavItem,
-  NavLink,
-} from '../../utils/Style';
-
+import { Container, LinkBrand, Nav, NavBar, NavItem, NavLink } from './CustomStyled';
 const LoggedOutView = (props: any) => {
   if (!props.currentUser) {
     return (

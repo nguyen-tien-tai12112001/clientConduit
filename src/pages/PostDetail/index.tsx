@@ -1,44 +1,15 @@
 import { Button, Col, Modal, Row, Typography } from 'antd';
 import 'antd/dist/antd.css';
 import moment from 'moment';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
-import styled from 'styled-components';
 import { deletePost, getPost } from '../../actions/posts';
 import CommentSection from './CommentSection';
+import { Banner } from './CustomStyled';
 const { Title } = Typography;
 
-const Banner = styled(Col)`
-  background: #333;
-  padding: 1rem;
-  margin-bottom: 2rem;
-  .content {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    align-content: flex-start;
-  }
-  .info {
-    color: #fff;
-    font-size: 1.2rem;
-    display: block;
-    font-weight: bold;
-    margin-bottom: 0.4rem;
-  }
-  .footer img {
-    display: inline-block;
-    vertical-align: middle;
-    height: 32px;
-    width: 32px;
-    border-radius: 30px;
-    position: absolute;
-    left: 8px;
-    bottom: 10px;
-  }
-`;
+
 function PostDetail() {
   var storage: any = localStorage.getItem('profile');
   const { post } = useSelector((state: any) => state.posts);

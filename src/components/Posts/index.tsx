@@ -1,10 +1,10 @@
 import { Spin } from 'antd';
 import { useSelector } from 'react-redux';
-import { Col, Layout, Row } from '../../utils/Style';
+import { Col, Layout, Row } from './CustomStyled';
 import Post from './Post';
+
 const Posts = () => {
   const { posts, isLoading } = useSelector((state: any) => state.posts);
-  console.log('🚀 ~ file: index.tsx ~ line 7 ~ Posts ~ posts', posts);
 
   return (
     <Layout>

@@ -2,7 +2,7 @@ import { FC, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { likePost } from '../../../actions/posts';
-import { ArticlePreview } from '../../../utils/Style';
+import { ArticlePreview } from '../CustomStyled';
 
 const Post: FC<any> = ({ post }) => {
   const user = JSON.parse(localStorage.getItem('profile') as string);

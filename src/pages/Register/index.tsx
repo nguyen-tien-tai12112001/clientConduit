@@ -4,7 +4,15 @@ import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import * as yup from 'yup';
 import { signup } from '../../actions/auth';
-import { Button, Col, InputField, Layout, Row, TextField, Typography } from '../../utils/Style';
+import {
+  Button,
+  Col,
+  InputField,
+  Layout,
+  Row,
+  TextField,
+  Typography,
+} from './CustomStyled';
 interface IFormInput {
   email: string;
   password: string;
@@ -16,7 +24,6 @@ const schema = yup
     password: yup.string().required().min(5),
   })
   .required();
-
 
 const Register = () => {
   const {
@@ -72,11 +79,7 @@ const Register = () => {
                 <i style={{ color: 'red' }}>{errors.password?.message}</i>
               </InputField>
 
-              <Button
-                type="submit"
-              >
-                Sign up
-              </Button>
+              <Button type="submit">Sign up</Button>
             </fieldset>
           </form>
         </Col>

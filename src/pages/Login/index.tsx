@@ -12,7 +12,7 @@ import {
   Row,
   TextField,
   Typography,
-} from '../../utils/Style';
+} from './CustomStyled';
 interface IFormInput {
   email: string;
   password: string;

@@ -5,7 +5,6 @@ a {
 .menu{
     text-align: center;
     width:110px;
-  
     padding-bottom: 30px;
     border: none;
     position: relative;
@@ -21,7 +20,6 @@ a {
 .menu.active{
     color :#5cb85c;
     border-bottom: 1px solid #5cb85c;
-    
 }
 
 .article-preview {

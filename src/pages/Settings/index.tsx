@@ -1,40 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
 import { updateProfile } from '../../actions/auth';
 import {
+  Layout,
   Button,
   Col,
   InputField,
-  Layout,
-  Row,
-  TextField,
   Typography,
-} from '../../utils/Style';
+  TextField,
+  Row,
+  TextArea,
+} from './CustomStyled';
 
-const TextArea = styled.textarea`
-  display: block;
-  width: 100%;
-  padding: 0.75rem;
-  font-size: 1.25rem;
-  line-height: 1.25;
-  color: #55595c;
-  background-color: #fff;
-  background-image: none;
-  background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 0.25rem;
-
-  &:focus {
-    border-color: #66afe9;
-    outline: none;
-  }
-  &::placeholder {
-    color: #999;
-    opacity: 1;
-  }
-`;
 const Setting = () => {
   var storage: any = localStorage.getItem('profile');
   const data = useSelector((state: any) => state.auth.authData?.result);
@@ -104,7 +82,7 @@ const Setting = () => {
   };
 
   return (
-    <Layout style={{height:"660px"}}>
+    <Layout style={{ height: '660px' }}>
       <Row>
         <Col col={6} offset={3}>
           <Typography variant="h1">Your Settings</Typography>

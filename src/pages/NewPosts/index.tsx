@@ -1,39 +1,9 @@
-import { Form, Input } from 'antd';
+import { Form } from 'antd';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
 import { createPost, updatePost } from '../../actions/posts';
-import { Button, Col, Layout, Row, TextField } from '../../utils/Style';
-
-const { TextArea } = Input;
-
-const InputField = styled(Form.Item)`
-  margin-bottom: 1rem;
-  vertical-align: middle;
-`;
-const InputArea = styled(TextArea)`
-  display: block;
-  width: 100%;
-  padding: 0.75rem;
-  font-size: 1.25rem;
-  line-height: 1.25;
-  color: #55595c;
-  background-color: #fff;
-  background-image: none;
-  background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 0.25rem;
-
-  &:focus {
-    border-color: #66afe9;
-    outline: none;
-  }
-  &::placeholder {
-    color: #999;
-    opacity: 1;
-  }
-`;
+import { Button, Col, InputArea, InputField, Layout, Row, TextField } from './CustomStyled';
 
 const NewPost = () => {
   const [postData, setPostData] = useState({

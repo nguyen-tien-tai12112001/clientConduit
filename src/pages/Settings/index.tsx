@@ -116,7 +116,7 @@ const Setting = () => {
                   type="text"
                   name="url"
                   placeholder="URL of profile picture"
-                  value={picture || 'https://picsum.photos/536/354'}
+                  value={picture}
                   onChange={handlePicture}
                 />
               </InputField>

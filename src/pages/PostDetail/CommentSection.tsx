@@ -21,7 +21,7 @@ const Form = styled.form`
     background-color: #f5f5f5;
     height: 50px;
     position: relative;
-    */ img {
+    img {
       display: inline-block;
       vertical-align: middle;
       height: 32px;
@@ -89,7 +89,7 @@ const CommentSection: FC<any> = ({ post }) => {
           <img alt=""
             src={
               user?.result.image
-                ? 'https://joeschmoe.io/api/v1/random'
+                ? user?.result.image
                 : 'https://api.realworld.io/images/smiley-cyrus.jpeg'
             }
           />

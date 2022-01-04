@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
 import { getPostByUser, likePost } from '../../actions/posts';
 import './index.css';
 
@@ -25,7 +24,7 @@ const Profile = () => {
   const [likes, setLikes] = useState(post?.likes);
   const [isActive, setActive] = useState<number>(2);
   const { posts } = useSelector((state: any) => state.posts);
-  
+
   const dispatch = useDispatch();
   const location = useLocation();
   const userId = user?.result?._id;
@@ -49,7 +48,6 @@ const Profile = () => {
       setLikes([...post.likes, userId]);
     }
   };
-  
 
   return (
     <>
@@ -64,8 +62,6 @@ const Profile = () => {
             style={{ width: 150, height: 150 }}
           />
           <Title level={2}>{user?.result.name}</Title>
-
-        
         </Col>
       </Row>
 
@@ -90,8 +86,9 @@ const Profile = () => {
                 <div>
                   <div className="article-preview">
                     <div className="article-meta">
-                      <Link  to={`/posts/${post?._id}`}>
-                        <img alt=""
+                      <Link to={`/posts/${post?._id}`}>
+                        <img
+                          alt=""
                           src={
                             user?.result?.image ||
                             'https://api.realworld.io/images/smiley-cyrus.jpeg'
@@ -139,9 +136,10 @@ const Profile = () => {
                   <div className="article-preview">
                     <div className="article-meta">
                       <Link className="" to={`/posts/${post?._id}`}>
-                        <img alt=""
+                        <img
+                          alt=""
                           src={
-                            user?.result?.image ||
+                            // user?.result?.image ||
                             'https://api.realworld.io/images/smiley-cyrus.jpeg'
                           }
                         />

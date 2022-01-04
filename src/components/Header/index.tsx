@@ -58,6 +58,7 @@ const LoggedInView = (props: any) => {
                 props.currentUser
                   ? props.currentUser?.result.image
                   : 'https://api.realworld.io/images/smiley-cyrus.jpeg'
+                  
               }
               style={{ width: 30, height: 30 }}
             />{' '}
